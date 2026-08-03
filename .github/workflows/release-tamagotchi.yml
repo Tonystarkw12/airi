@@ -585,7 +585,7 @@ jobs:
   publish-nightly-release:
     name: Publish rolling nightly prerelease
     needs: build
-    if: ${{ always() && github.repository == 'Tonystarkw12/airi' && github.event_name == 'schedule' && !cancelled() }}
+    if: ${{ github.repository == 'Tonystarkw12/airi' && github.event_name == 'schedule' && needs.build.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -621,6 +621,10 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          gh release view nightly --json assets --jq '.assets[].name' | while IFS= read -r asset; do
+            gh release delete-asset nightly "$asset" --yes
+          done
+
           find dist -type f \
             \( -name '*.exe' -o -name '*.zip' -o -name '*.dmg' -o -name '*.deb' -o -name '*.rpm' -o -name '*.flatpak' -o -name 'latest-*.yml' \) \
             -print0 | xargs -0 --no-run-if-empty gh release upload nightly --clobber
