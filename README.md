@@ -16,6 +16,21 @@
 
 <p align="center">Re-creating Neuro-sama, a soul container of AI waifu / virtual characters to bring them into our world.</p>
 
+> [!IMPORTANT]
+> **Community fork maintained by [Tonystarkw12](https://github.com/Tonystarkw12).** This repository tracks the latest [official Project AIRI](https://github.com/moeru-ai/airi) and adds relationship-focused features. It is not an official Moeru AI distribution.
+>
+> **这是 [Tonystarkw12](https://github.com/Tonystarkw12) 维护的社区 Fork。** 本仓库以最新[官方 Project AIRI](https://github.com/moeru-ai/airi) 为基础，加入关系成长特色功能，并非 Moeru AI 官方发行版。
+
+### Fork features / Fork 特色功能
+
+- **Five-dimensional emotion system / 五维情绪系统** — Tracks valence, arousal, trust, affection, and stability per chat session, with offline evaluation, time decay, and local persistence.
+- **Emotion-aware responses / 情绪感知回复** — Injects current emotional state into the character system prompt so emotion subtly affects response tone.
+- **Relationship bond progression / 长期羁绊成长** — Maintains per-character XP, levels, and relationship stages (`stranger`, `familiar`, `trusted`, `cherished`).
+- **Significant interaction memory / 重要互动记录** — Stores a bounded history of trusted interaction categories and uses recent relationship context in prompts without injecting raw user text.
+- **Airi Card integration / 人设卡集成** — Uses upstream Airi Card as the canonical identity system; forked and independent sessions retain correct character-specific emotion and bond state.
+
+Upstream project, documentation, downloads, community links, and license remain owned and maintained by the [Project AIRI contributors](https://github.com/moeru-ai/airi/graphs/contributors).
+
 <p align="center">
   [<a href="https://discord.gg/TgQ3Cu2F7A">Join Discord Server</a>] [<a href="https://airi.moeru.ai">Try it</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.zh-CN.md">简体中文</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.ja-JP.md">日本語</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.ru-RU.md">Русский</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.vi.md">Tiếng Việt</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.fr.md">Français</a>] [<a href="https://github.com/moeru-ai/airi/blob/main/docs/README.ko-KR.md">한국어</a>]
 </p>
