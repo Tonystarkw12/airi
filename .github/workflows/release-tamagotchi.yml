@@ -585,7 +585,7 @@ jobs:
   publish-nightly-release:
     name: Publish rolling nightly prerelease
     needs: build
-    if: ${{ github.repository == 'Tonystarkw12/airi' && github.event_name == 'schedule' && needs.build.result == 'success' }}
+    if: ${{ github.repository == 'Tonystarkw12/airi' && needs.build.result == 'success' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.artifacts_only)) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
